@@ -1,8 +1,4 @@
-let basePath = ''
-
-if (process.env.NODE_ENV === 'production') {
-  basePath = '/your base path'
-}
+let basePath = process.env.BASE_PATH
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
