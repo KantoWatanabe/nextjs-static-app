@@ -1,4 +1,4 @@
-let basePath = process.env.BASE_PATH
+let basePath = process.env.NEXT_PUBLIC_BASE_PATH
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -9,5 +9,8 @@ const nextConfig = {
   // distDir: 'dist',
   basePath: basePath,
   assetPrefix: basePath,
+  //publicRuntimeConfig: {
+  //  basePath: basePath,
+  //},
 };
 module.exports = nextConfig
