@@ -1,10 +1,11 @@
 "use client"
 
-import styles from '../page.module.css'
-import Link from 'next/link'
+import styles from '../page.module.css';
+import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import useSWR from 'swr';
-import { basePath } from '../../lib/util'
+import { basePath } from '../../lib/util';
+import {TestItem} from '../../interfaces';
 
 export default function Home() {
   // https://nextjs.org/docs/app/api-reference/functions/use-search-params
@@ -24,11 +25,6 @@ export default function Home() {
       </div>
     </main>
   )
-}
-
-type TestItem = {
-  id: number,
-  name: string
 }
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
