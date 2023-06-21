@@ -32,4 +32,6 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
+# next-env.d.tsをgitに含めないと以下エラーが出る
+# Cannot find module './page.module.css' or its corresponding type declarations.ts(2307)
+#next-env.d.ts
