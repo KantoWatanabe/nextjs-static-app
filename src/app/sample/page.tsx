@@ -1,6 +1,6 @@
 "use client"
 
-import styles from '../page.module.css';
+import styles from '../../styles/page.module.css';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import useSWR from 'swr';
