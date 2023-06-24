@@ -6,6 +6,7 @@ import { useSearchParams } from 'next/navigation';
 import useSWR from 'swr';
 import { basePath } from '../../lib/util';
 import {TestItem} from '../../interfaces';
+import {TEST} from '../../lib/const';
 
 export default function Home() {
   // https://nextjs.org/docs/app/api-reference/functions/use-search-params
@@ -17,6 +18,9 @@ export default function Home() {
       <div className={styles.description}>
         <p>
           This is Sample Page.  {search}
+        </p>
+        <p>
+          {TEST}
         </p>
         <Link href="/sample/sample1-2">Go to Sample1-2.</Link>
         {/*<Link href="/sample/111">Go to Sample Detail.</Link>-->*/}
