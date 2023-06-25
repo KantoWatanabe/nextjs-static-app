@@ -7,11 +7,31 @@ import useSWR from 'swr';
 import { basePath } from '../../lib/util';
 import {TestItem} from '../../interfaces';
 import {TEST} from '../../lib/const';
+import {Cookie} from '../../lib/cookie';
+import { useState } from 'react';
 
 export default function Home() {
   // https://nextjs.org/docs/app/api-reference/functions/use-search-params
   const searchParams = useSearchParams();
   const search = searchParams.get('query');
+  const [cookieStr, setCookieStr] = useState('');
+
+  const handleSetClick = () => {
+    const expires = new Date();
+    expires.setDate(expires.getDate() + 1);
+    Cookie.set('test', 'aaa', {expires: expires, secure: true});
+  };
+
+  const handleGetClick = () => {
+    const cookie = Cookie.get('test');
+    setCookieStr(cookie ? cookie : '');
+  };
+
+  const handleRemoveClick = () => {
+    Cookie.remove('test');
+    const cookie = Cookie.get('test');
+    setCookieStr(cookie ? cookie : '');
+  };
 
   return (
     <main className={styles.main}>
@@ -29,6 +49,11 @@ export default function Home() {
         {/*<Link href="/sample/111">Go to Sample Detail.</Link>-->*/}
         <Link href="/">Back to Home.</Link>
         <TestList />
+      </div>
+      <div className={styles.description}>
+        <button onClick={handleSetClick}>set cookie</button>
+        <button onClick={handleGetClick}>get cookie</button><span>{cookieStr}</span>
+        <button onClick={handleRemoveClick}>remove cookie</button>
       </div>
     </main>
   )
