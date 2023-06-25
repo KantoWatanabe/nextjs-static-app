@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "env-cmd -f .env.prod next build",
+    "build:dev": "env-cmd -f .env.dev next build",
     "start": "next start",
     "lint": "next lint",
     "start-static": "npx serve out/"
@@ -19,6 +20,7 @@
     "@types/node": "20.2.5",
     "@types/react": "18.2.7",
     "@types/react-dom": "18.2.4",
+    "env-cmd": "^10.1.0",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.4",
     "typescript": "5.0.4"

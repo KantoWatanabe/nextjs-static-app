@@ -22,6 +22,9 @@ export default function Home() {
         <p>
           {TEST}
         </p>
+        <p>
+          NEXT_PUBLIC_ENV={process.env.NEXT_PUBLIC_ENV}
+        </p>
         <Link href="/sample/sample1-2">Go to Sample1-2.</Link>
         {/*<Link href="/sample/111">Go to Sample Detail.</Link>-->*/}
         <Link href="/">Back to Home.</Link>
