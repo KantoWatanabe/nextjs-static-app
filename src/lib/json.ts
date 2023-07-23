@@ -15,7 +15,12 @@ let baseConfig: SWRConfiguration = {
 
 const fetcher = async <T>(url: string): Promise<T> => {
   return fetch(url)
-    .then((res) => res.json())
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error(`${res.statusText}(${res.status})`);
+      }
+      return res.json();
+    });
 };
 
 export function useTest(config: SWRConfiguration = baseConfig) {

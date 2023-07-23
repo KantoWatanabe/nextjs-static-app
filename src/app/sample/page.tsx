@@ -61,7 +61,7 @@ export default function Home() {
 function TestList() {
   const { data, error } = useTest();
 
-  if (error) return <div>Failed to load</div>;
+  if (error) return <div>Failed to load...{error.message}</div>;
   if (!data) return <div>Loading...</div>;
 
   const listItems = data.list.map((item: TestItem) =>
