@@ -1,4 +1,6 @@
-import styles from '../../../styles/page.module.css'
+"use client"
+
+import styles from '@/styles/page.module.css'
 import Link from 'next/link'
 
 export default function Home() {

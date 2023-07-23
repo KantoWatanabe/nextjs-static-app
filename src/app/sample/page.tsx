@@ -1,13 +1,13 @@
 "use client"
 
-import styles from '../../styles/page.module.css';
+import styles from '@/styles/page.module.css';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import useSWR from 'swr';
-import { basePath } from '../../lib/util';
-import {TestItem} from '../../interfaces';
-import {TEST} from '../../lib/const';
-import {Cookie} from '../../lib/cookie';
+import { basePath } from '@/lib/util';
+import {TestItem} from '@/interfaces';
+import {TEST} from '@/lib/const';
+import {Cookie} from '@/lib/cookie';
 import { useState } from 'react';
 
 export default function Home() {
