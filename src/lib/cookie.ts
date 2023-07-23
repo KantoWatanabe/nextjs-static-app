@@ -39,9 +39,7 @@ export class Cookie {
     if (options?.domain) {
       optionsStr += `domain=${options.domain}; `;
     }
-    if (options?.path) {
-      optionsStr += `path=${options.path}; `;
-    }
+    optionsStr += `path=${options?.path ? options?.path : '/'}; `;
     if (options?.expires) {
       if (typeof options.expires === 'number') {
         optionsStr += `max-age=${options.expires}; `;
