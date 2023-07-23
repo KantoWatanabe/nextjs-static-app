@@ -3,11 +3,10 @@
 import styles from '@/styles/page.module.css';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-import useSWR from 'swr';
-import { basePath } from '@/lib/util';
 import {TestItem} from '@/interfaces';
 import {TEST} from '@/lib/const';
 import {Cookie} from '@/lib/cookie';
+import {useTest} from '@/lib/json'
 import { useState } from 'react';
 
 export default function Home() {
@@ -59,10 +58,8 @@ export default function Home() {
   )
 }
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
-
 function TestList() {
-  const { data, error } = useSWR(`${basePath()}/json/test.json`, fetcher);
+  const { data, error } = useTest();
 
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;

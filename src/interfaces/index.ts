@@ -1,1 +1,1 @@
-export type { TestItem } from './test';
+export type * from './test';
