@@ -8,7 +8,8 @@
     "build:dev": "env-cmd -f .env.dev next build",
     "start": "next start",
     "lint": "next lint",
-    "start-static": "npx serve out/"
+    "start-static": "npx serve out/",
+    "stub": "php -S localhost:8181 -t stub/"
   },
   "dependencies": {
     "next": "13.4.4",
